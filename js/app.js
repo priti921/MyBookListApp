@@ -31,6 +31,7 @@ class UI {
         const row = document.createElement('tr');
 
         row.innerHTML = `
+        <td></td>
         <td>${book.title}</td>
         <td>${book.author}</td>
         <td>${book.isbn}</td>
