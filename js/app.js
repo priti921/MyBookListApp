@@ -22,7 +22,6 @@ class UI {
         ];
 
         const books = StoredBooks;
-
         books.forEach(book => UI.addBookToLIst(book));
     }
 
@@ -47,9 +46,9 @@ class UI {
         }
     }
 
-    static showAlert(message, className) {
-        const div
-    }
+    // static showAlert(message, className) {
+    //     const div
+    // }
 
     static clearFields(){
         document.querySelector('#title').value = '';
@@ -60,7 +59,7 @@ class UI {
 //Store Class: Handles Storage
 
 //Event: Display Books
-document.addEventListener('DOMContentLoaded', UI.displayBooks);
+document.addEventListener('DOMContentLoaded', UI.displayBooks());
 //Event: Add a book
 document.querySelector('#book-form').addEventListener('submit', e => {
     e.preventDefault();
