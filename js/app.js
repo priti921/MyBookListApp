@@ -62,7 +62,7 @@ class UI {
         const form = document.querySelector('#book-form');
 
         container.insertBefore(div, form);
-        // vanish in 3 seconds
+        // NOTE: vanish in 3 seconds
         setTimeout(() => {
             document.querySelector('.alert').remove();
         }, 3000);
@@ -71,10 +71,41 @@ class UI {
     static clearFields(){
         document.querySelector('#title').value = '';
         document.querySelector('#author').value = '';
-        document.querySelector('#isbn').value = '';
+        document.querySelector(+'#isbn').value = '';
     }
 }
 //Store Class: Handles Storage
+class Store {
+    static getBooks(){
+        let books;
+        if(localStorage.getItem('books') === null) {
+            books = [];
+        } else {
+            books = JSON.parse(localStorage.getItem('books'));
+        }
+        return books;
+    }
+
+    static addBook(book){
+        const books = Store.getBooks();
+
+        books.push(book);
+
+        localStorage.setItem('book', JSON.stringify(books));
+    }
+
+    static removeBook(isbn) {
+        const books = Store.getBooks();
+
+        books.forEach((book, index) => {
+            if(book.isbn === isbn) {
+                books.splice(index, 1);
+            }
+        });
+
+        localStorage.setItem('books', JSON.stringify(books));
+    }
+}
 
 //Event: Display Books
 document.addEventListener('DOMContentLoaded', UI.displayBooks());
