@@ -10,14 +10,19 @@ class Book {
 class UI {
     static displayBooks() {
         const StoredBooks = [{
-                title: 'Book one',
-                author: 'Jhon Doe',
-                isbn: '234230'
+                title: 'Eloquent JavaScript',
+                author: 'Marjin Haverbake',
+                isbn: '2342309'
             },
             {
-                title: 'Book two',
-                author: 'Jane Doe',
+                title: 'The Principels Of Objest Oriendted JavaScript',
+                author: 'Nicholas C.Zakas',
                 isbn: '9840923'
+            },
+            {
+                title: 'Design for hackers',
+                author: 'David Kaday',
+                isbn: '2143523'
             }
         ];
 
